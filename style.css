@@ -12,30 +12,67 @@ html, body {
 }
 
 .view1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
+  background: white;
+  color: black;
+}
+.view1 .hamburger {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+.view1 .nav-links {
+  display: none; /* hidden by default on mobile */
+  flex-direction: column;
+  gap: 1em;
+  background: #222;
+  position: absolute;
+  top: 60px; /* adjust based on navbar height */
+  right: 1em;
+  padding: 1em;
+  border-radius: 8px;
+}
+.view1 .nav-links a {
+  text-decoration: none;
+  color: white;
+}
+.view1 .nav-links.active {
+  display: flex; /* show when active */
+}
+
+.view2 {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-.view1 .heroimg {
+.view2 .heroimg {
   width: 100%;
+  max-height: 400px; /* keeps it from getting too tall */
+  overflow: hidden;
   padding: 2em;
-  padding-bottom: 1em;
+  padding-bottom: 0;
 }
-.view1 .heroimg img {
+.view2 .heroimg img {
   width: 100%;
-  aspect-ratio: 2/4;
-  max-height: 400px;
+  height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+     object-fit: cover; /* fills container */
+  -o-object-position: center;
+     object-position: center; /* always shows center */
   border: 2px solid black;
 }
-.view1 .herocontent {
+.view2 .herocontent {
   width: 100%;
   padding: 2em;
   padding-top: 0;
 }
-.view1 .herocontent p {
+.view2 .herocontent p {
   line-height: 1.5em;
   font-weight: 200;
 }/*# sourceMappingURL=style.css.map */
