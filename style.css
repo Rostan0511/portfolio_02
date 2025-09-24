@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.view1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.view1 .heroimg {
+  width: 100%;
+  padding: 2em;
+  padding-bottom: 1em;
+}
+.view1 .heroimg img {
+  width: 100%;
+  aspect-ratio: 2/4;
+  max-height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid black;
+}
+.view1 .herocontent {
+  width: 100%;
+  padding: 2em;
+  padding-top: 0;
+}
+.view1 .herocontent p {
+  line-height: 1.5em;
+  font-weight: 200;
+}/*# sourceMappingURL=style.css.map */

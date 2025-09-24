@@ -1,0 +1,41 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.view1{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .heroimg{
+    width: 100%;
+    padding: 2em;
+    padding-bottom: 1em;
+    img{
+      width: 100%;
+      aspect-ratio: 2/4;
+      max-height: 400px;
+      object-fit: cover;
+      border: 2px solid black;
+    }
+  }
+  .herocontent{
+    width: 100%;
+    padding: 2em;
+    padding-top: 0;
+    p{
+        line-height: 1.5em;
+        font-weight: 200;
+    }
+  }
+}
