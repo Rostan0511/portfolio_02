@@ -8,7 +8,9 @@ html, body{
     height: 100%;
     width: 100%;
     color: black;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
 }
 .view1 {
             display: flex;
@@ -20,10 +22,10 @@ html, body{
             position: relative;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
-                    .logo {
+            .logo {
             font-weight: 600;
             font-size: 1.2em;
-        }
+            }
 
         /* Hamburger button */
         .hamburger {
@@ -144,102 +146,205 @@ html, body{
         }
         }
 
+.main{
 
-
-.nav1{
-    display: none;
+    border: 1px solid black;
+    margin: 1em;
 }
-@media (min-width: 768px) {
-    .nav1{
+.about{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    padding: 2em;
+    .top{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .bottom{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 10em;
-        padding: 2em;
-        a{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: black;
-            text-decoration: none;
-            letter-spacing: 0.2em;
-            font-size: clamp(1rem, 1.5vw, 1.8rem);
-            font-weight: 500;
+        flex-direction: column;
+        gap: 1em;
+        width: 100%;
+        h1{
+            font-size: 2em;
+            // margin-bottom: 0.5em;
+            text-align: left;
         }
-        .nav-clock {
-            // font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            // font-weight: 600;
-            font-size: 0.95rem;
-            color: inherit;
-            display: inline-flex;
-            align-items: center;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: black;
-            text-decoration: none;
-            letter-spacing: 0.2em;
-            font-size: clamp(1rem, 1.5vw, 1.8rem);
-            font-weight: 500;
+        .info{
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            p{
+                line-height: 1.5em;
+                word-spacing: 0.10em;
             }
-
-
+        }
+      
     }
-    
 }
-.view2{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .heroimg{
-    width: 100%;
-    max-height: 400px;  /* keeps it from getting too tall */
-    overflow: hidden; 
-    padding: 2em;
-    padding-bottom: 1em;
-    .deskimg{
-        display: none;
-    }
-    img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;      /* fills container */
-    object-position: center; /* always shows center */
-    border: 2px solid black;
-    }
-  }
-  .herocontent{
-    width: 100%;
-    padding: 2em;
-    padding-top: 0;
-    p{
-        line-height: 1.5em;
-        font-weight: 400;
-    }
-  }
-}
+
 @media (min-width: 768px) {
-    .view1{
-        display: none;
-    }
-    .view2{
-        height: initial;
-        .heroimg{
-            max-height: 100%;
-            padding: 1em 4em;
-            
-            
-            .mobileimg{
-                display: none;
+    .about{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .bottom{
+            h1{
+                font-size: 3em;
             }
-            .deskimg{
-                display: initial;
-                object-position: initial;
-                object-fit: cover;
-             
+            .info{
+                p{
+                    font-size: 1.1em;
+                    line-height: 1.8em;
+                    word-spacing: 0.12em;
+                }
             }
         }
-        .herocontent{
-            display: none;
+    }
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: black;
+}
+
+.exp{
+    width: 100%;
+    padding: 2em;
+    ul{
+        margin-left: 2em;
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1em;
+        border-bottom: 2px solid #ddd;
+        display: inline-block;
+        padding-bottom: 0.2em;
+    }
+    .exp-card {
+        margin-bottom: 1.5em;
+        padding: 1em;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        background: #fafafa;
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3em;
+        }
+        span {
+            font-weight: normal;
+            color: #666;
+        }
+        ul {
+            margin: 0.5em 0 0 1.2em;
+            line-height: 1.6;
         }
     }
-    
+}
+
+.skills {
+  padding: 2em;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #ddd;
+    display: inline-block;
+    padding-bottom: 0.2em;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7em;
+
+    .skill-badge {
+      display: inline-block;
+      padding: 0.5em 1em;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      background: #f8f8f8;
+      color: #333;
+      cursor: default;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: #333;
+        color: #fff;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.achievements {
+  padding: 2em;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #ddd;
+    display: inline-block;
+    padding-bottom: 0.2em;
+  }
+
+  .achievement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 1rem;
+      margin-bottom: 0.8em;
+      padding-left: 1.5em;
+      position: relative;
+      color: #333;
+
+      &::before {
+        content: "★";
+        position: absolute;
+        left: 0;
+        color: #f39c12; // gold star
+        font-size: 1.1rem;
+      }
+
+      strong {
+        color: #111;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .exp{
+       h2{
+            font-size: 2em;
+            padding-bottom: 0.5em;
+       }
+       p{
+            font-size: 1.2em;
+            line-height: 1.6em;
+            word-spacing: 0.12em;
+       }
+    }
 }

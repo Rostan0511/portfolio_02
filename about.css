@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +9,7 @@ html, body {
   height: 100%;
   width: 100%;
   color: black;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .view1 {
@@ -131,97 +132,176 @@ html, body {
   visibility: visible;
 }
 
-.nav1 {
-  display: none;
+.main {
+  border: 1px solid black;
+  margin: 1em;
 }
 
-@media (min-width: 768px) {
-  .nav1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10em;
-    padding: 2em;
-  }
-  .nav1 a {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    color: black;
-    text-decoration: none;
-    letter-spacing: 0.2em;
-    font-size: clamp(1rem, 1.5vw, 1.8rem);
-    font-weight: 500;
-  }
-  .nav1 .nav-clock {
-    font-size: 0.95rem;
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    color: black;
-    text-decoration: none;
-    letter-spacing: 0.2em;
-    font-size: clamp(1rem, 1.5vw, 1.8rem);
-    font-weight: 500;
-  }
-}
-.view2 {
-  width: 100%;
-  height: 100%;
+.about {
   display: flex;
   flex-direction: column;
-}
-.view2 .heroimg {
+  gap: 1em;
   width: 100%;
-  max-height: 400px; /* keeps it from getting too tall */
-  overflow: hidden;
   padding: 2em;
-  padding-bottom: 1em;
 }
-.view2 .heroimg .deskimg {
-  display: none;
-}
-.view2 .heroimg img {
+.about .top {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover; /* fills container */
-  -o-object-position: center;
-     object-position: center; /* always shows center */
-  border: 2px solid black;
 }
-.view2 .herocontent {
+.about .top img {
   width: 100%;
-  padding: 2em;
-  padding-top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.view2 .herocontent p {
+.about .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+.about .bottom h1 {
+  font-size: 2em;
+  text-align: left;
+}
+.about .bottom .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.about .bottom .info p {
   line-height: 1.5em;
-  font-weight: 400;
+  word-spacing: 0.1em;
 }
 
 @media (min-width: 768px) {
-  .view1 {
-    display: none;
+  .about {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
-  .view2 {
-    height: initial;
+  .about .bottom h1 {
+    font-size: 3em;
   }
-  .view2 .heroimg {
-    max-height: 100%;
-    padding: 1em 4em;
+  .about .bottom .info p {
+    font-size: 1.1em;
+    line-height: 1.8em;
+    word-spacing: 0.12em;
   }
-  .view2 .heroimg .mobileimg {
-    display: none;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background: black;
+}
+
+.exp {
+  width: 100%;
+  padding: 2em;
+}
+.exp ul {
+  margin-left: 2em;
+}
+.exp h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #ddd;
+  display: inline-block;
+  padding-bottom: 0.2em;
+}
+.exp .exp-card {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.exp .exp-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3em;
+}
+.exp .exp-card span {
+  font-weight: normal;
+  color: #666;
+}
+.exp .exp-card ul {
+  margin: 0.5em 0 0 1.2em;
+  line-height: 1.6;
+}
+
+.skills {
+  padding: 2em;
+}
+.skills h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #ddd;
+  display: inline-block;
+  padding-bottom: 0.2em;
+}
+.skills .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em;
+}
+.skills .skills-container .skill-badge {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #f8f8f8;
+  color: #333;
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+}
+.skills .skills-container .skill-badge:hover {
+  background: #333;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.achievements {
+  padding: 2em;
+}
+.achievements h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #ddd;
+  display: inline-block;
+  padding-bottom: 0.2em;
+}
+.achievements .achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.achievements .achievement-list li {
+  font-size: 1rem;
+  margin-bottom: 0.8em;
+  padding-left: 1.5em;
+  position: relative;
+  color: #333;
+}
+.achievements .achievement-list li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+  font-size: 1.1rem;
+}
+.achievements .achievement-list li strong {
+  color: #111;
+}
+
+@media (min-width: 768px) {
+  .exp h2 {
+    font-size: 2em;
+    padding-bottom: 0.5em;
   }
-  .view2 .heroimg .deskimg {
-    display: initial;
-    -o-object-position: initial;
-       object-position: initial;
-    -o-object-fit: cover;
-       object-fit: cover;
+  .exp p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    word-spacing: 0.12em;
   }
-  .view2 .herocontent {
-    display: none;
-  }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=about.css.map */
